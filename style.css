@@ -1,0 +1,300 @@
+    /*=============== GOOGLE FONTS ===============*/
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;800&display=swap');
+
+
+    /*=============== VARIABLES CSS ===============*/
+    :root {
+        --header-height: 3.5rem;
+        /*56px*/
+
+        /*========== Colors ==========*/
+        /*Color mode HSL(hue, saturation, lightness)*/
+        --primary-color-hue: 352;
+        --dark-color-lightness: 17%;
+        --light-color-lightness: 92%;
+        --white-color-lightness: 100%;
+
+        --color-white: hsl(252, 30%, var(--white-color-lightness));
+        --color-light: hsl(252, 30%, var(--light-color-lightness));
+        --color-gray: hsl(252, 15%, 65%);
+        --color-primary: #7f00ff;
+        --color-dark: hsl(252, 30%, var(--dark-color-lightness));
+
+        /*========== Font and typography ==========*/
+        /*.5rem = 8px | 1rem = 16px ...*/
+        --body-font: 'Poppins', sans-serif;
+        --h1-font-size: 2.25rem;
+        --h2-font-size: 1.75rem;
+        --h3-font-size: 1.25rem;
+        --normal-font-size: 1rem;
+        --small-font-size: .875rem;
+
+        /*========== Font weight ==========*/
+        --font-medium: 400;
+        --font-semi-bold: 600;
+
+        /*========== Margenes Bottom ==========*/
+        /*.5rem = 8px | 1rem = 16px ...*/
+        --m-0-5: .5rem;
+        --m-0-75: .75rem;
+        --m-1: 1rem;
+        --m-1-5: 1.5rem;
+        --m-2: 2rem;
+        --m-2-5: 2.5rem;
+
+        /*========== Card padding ==========*/
+        --card-padding: 1.9rem 0.95rem;
+
+        /*========== Border radius ==========*/
+        --border-radius: 1.25rem;
+
+        /*========== Box shadow ==========*/
+        --box-shadow: 0px 5px 20px 0px rgba(69, 67, 96, 0.1);
+    }
+
+    /*========== Responsive Typography ==========*/
+    @media screen and (max-width:992px) {
+        :root {
+            --h1-font-size: 1.75rem;
+            --h2-font-size: 1.5rem;
+            --h3-font-size: 1rem;
+            --normal-font-size: .938rem;
+            --small-font-size: .813rem;
+        }
+    }
+
+
+    /*========== Base ==========*/
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body,
+    button,
+    input,
+    textarea {
+        font-family: var(--body-font);
+        font-size: var(--normal-font-size);
+    }
+
+    body {
+        background-color: var(--color-light);
+        color: var(--color-dark);
+        line-height: 1.7;
+        font-weight: var(--font-medium);
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        vertical-align: middle;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+        color: var(--color-dark);
+    }
+
+    h1,
+    h2,
+    h3 {
+        font-weight: var(--font-semi-bold);
+    }
+
+    h1 {
+        font-size: var(--h1-font-size);
+    }
+
+    h2 {
+        font-size: var(--h2-font-size);
+    }
+
+    h3 {
+        font-size: var(--h3-font-size);
+    }
+
+    /*========== Layout ==========*/
+    .container {
+        max-width: 1468px;
+        margin: auto;
+    }
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    /*========== Reusable CSS classes ==========*/
+    .section .container {
+        padding-top: 3.75rem;
+        padding-bottom: 4.75rem;
+    }
+
+    .section-title {
+        font-size: var(--h1-font-size);
+        margin-left: var(--m-0-75);
+        margin-bottom: var(--m-2-5);
+    }
+
+    .padd-15 {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    /*========== Buttons ==========*/
+
+    .btn {
+        color: #000000 !important;
+        border-width: 0px !important;
+        border-radius: 5px;
+        letter-spacing: 0px;
+        font-size: 16px;
+        font-weight: 800;
+        text-transform: uppercase !important;
+        background-image: linear-gradient(90deg, #ff6008 0%, #7f00ff 100%);
+        padding-top: 15px !important;
+        padding-right: 35px !important;
+        padding-bottom: 15px !important;
+        padding-left: 35px !important;
+    }
+
+    .btn:focus {
+        outline: 0;
+    }
+
+    @keyframes button-push {
+        50% {
+            transform: scale(0.8);
+
+        }
+
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    .btn-default {
+        color: #fff;
+        vertical-align: middle;
+        background-color: var(--color-primary);
+        display: inline-block;
+        transform: perspective(1ps)translateZ(0);
+    }
+
+    .btn-default:hover {
+        animation-name: button-push;
+        animation-duration: 0.3s;
+        animation-timing-function: linear;
+        animation-iteration-count: 1;
+    }
+
+    /*========== Header ==========*/
+    .header {
+
+        width: 100%;
+        background-color: var(--color-light);
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 100;
+    }
+
+    .nav {
+        height: calc(var(--header-height)+1.5rem);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        column-gap: 3rem;
+    }
+
+    .nav-logo {
+        font-size: var(--h2-font-size);
+        font-weight: var(--font-semi-bold);
+        letter-spacing: 0.125rem;
+        position: relative;
+    }
+
+    .nav-logo::after {
+        position: absolute;
+        content: '';
+        width: 0.4rem;
+        height: 0.4rem;
+        border-radius: 50%;
+        background-color: var(--color-primary);
+        top: 56%;
+        right: -0.35rem;
+    }
+
+    .nav-menu {
+        margin-left: auto;
+    }
+
+    .nav-list {
+        display: flex;
+        column-gap: 3rem;
+    }
+
+    .nav-link {
+        font-weight: var(--font-medium);
+        transition: .3s;
+    }
+
+    .nav-link:hover {
+        color: var(--color-primary);
+    }
+
+    .nav-close {
+        font-size: 1rem;
+        position: absolute;
+        top: 1rem;
+        right: 1.25rem;
+        cursor: pointer;
+    }
+
+    .nav-btns {
+        display: inline-flex;
+        align-items: center;
+        column-gap: 1rem;
+    }
+
+    .change-theme {
+        font-size: 1.15rem;
+        cursor: pointer;
+    }
+
+    .nav-toggle {
+        font-size: 1.2rem;
+        cursor: pointer;
+    }
+
+    .nav-close,
+    .nav-toggle {
+        display: none;
+    }
+
+    .active-link {
+        position: relative;
+      }
+      
+      .active-link::before {
+        content: '';
+        position: absolute;
+        bottom: -0.75rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0.4rem;
+        height: 0.4rem;
+        background-color: rebeccapurple;
+        border-radius: 50%;
+      }
+      
